@@ -44,6 +44,13 @@ class OnetimeAuthentication extends AbstractAuthenticationService {
 	protected $onetimeSession = NULL;
 
 	/**
+	 * OnetimeSession
+	 *
+	 * @var \Gebruederheitz\GhOnetimesession\Configuration\ExtensionConfiguration
+	 */
+	protected $extensionConfiguration = NULL;
+
+	/**
 	 * Pseudo constructor
 	 *
 	 * @param string $subType
@@ -55,6 +62,7 @@ class OnetimeAuthentication extends AbstractAuthenticationService {
 	public function initAuth($subType, $loginData, $authInfo, $pObj) {
 		parent::initAuth($subType, $loginData, $authInfo, $pObj);
 		$this->onetimeSession = GeneralUtility::makeInstance('Gebruederheitz\\GhOnetimesession\\Session\\OnetimeSession');
+		$this->extensionConfiguration = GeneralUtility::makeInstance('Gebruederheitz\\GhOnetimesession\\Configuration\\ExtensionConfiguration');
 	}
 
 	/**
@@ -86,11 +94,10 @@ class OnetimeAuthentication extends AbstractAuthenticationService {
 			return $user;
 		}
 
-		$settings = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['gh_onetimesession']);
-		$userGroups = $settings['fe_groups'];
-
+		$userGroups = $this->extensionConfiguration->getFeGroups();
 		$randomString = GeneralUtility::getRandomHexString(32);
 		$now = time();
+
 		$user = array(
 			'uid' => '',
 			'pid' => 0,
