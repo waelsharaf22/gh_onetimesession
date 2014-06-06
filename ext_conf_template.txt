@@ -1,2 +1,2 @@
 # cat=basic/; type=string; label=Comma separated list of fe_groups to assign to the user
-fe_groups = 0
+feGroups = 0

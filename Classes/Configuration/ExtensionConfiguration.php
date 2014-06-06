@@ -44,7 +44,7 @@ class ExtensionConfiguration implements \TYPO3\CMS\Core\SingletonInterface {
 	 */
 	public function __construct() {
 		$settings = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][self::EXTENSION_KEY]);
-		$this->feGroups = $settings['fe_groups'];
+		$this->feGroups = $settings['feGroups'];
 	}
 
 	/**
