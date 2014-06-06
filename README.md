@@ -1,6 +1,11 @@
 # EXT:gh_onetimesession - Onetime Frontend Sessions
 
-This extension provides a frontend user session with a limited feature set but without the need of fe_users.
+## What does it do?
+
+This extension provides a onetime frontend user session with a limited feature set. It does not need to create dummy fe_users in your Database.
+
+A user with a onetime session can access pages and content elements which are restricted to frontend groups. The  frontend groups can be configured system wide in the extension settings.
+
 
 ## Installation
 
@@ -39,11 +44,12 @@ if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('gh_onetimesess
 
 ### Extension configuration
 
-There are two global configuration options for the built-in caching:
+There is one global configuration option to set the frontend groups which will be assigned to the user:
 
-* Comma separated list of fe_groups to assign to the user (default: 0)
-
-The user with a onetime session can access pages and content elements which are restricted to these fe_groups.
+```
+# Comma separated list of frontend groups to assign to the user (default: 0)
+feGroups = 
+```
 
 ## Known issues
 
