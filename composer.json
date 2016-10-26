@@ -8,7 +8,7 @@
 			"homepage": "http://gebruederheitz.de/"
 		}
 	],
-	"description": "Simple Onetime Frontend Sessions for TYPO3",
+	"description": "Simple Onetime Frontend Sessions for TYPO3. Provides a user session with a limited feature set but without the need of fe_users.",
 	"homepage": "https://github.com/gebruederheitz/gh_onetimesession",
 	"support": {
 		"issues": "https://github.com/gebruederheitz/gh_onetimesession/issues"
