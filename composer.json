@@ -1,0 +1,35 @@
+{
+	"name": "gebruederheitz/gh_onetimesession",
+	"type": "typo3-cms-extension",
+	"authors": [
+		{
+			"name": "/gebrüderheitz",
+			"email": "support@gebruederheitz.de",
+			"homepage": "http://gebruederheitz.de/"
+		}
+	],
+	"description": "Simple Onetime Frontend Sessions for TYPO3",
+	"homepage": "https://github.com/gebruederheitz/gh_onetimesession",
+	"support": {
+		"issues": "https://github.com/gebruederheitz/gh_onetimesession/issues"
+	},
+	"license": [
+		"GPL-2.0+"
+	],
+	"keywords": [
+		"TYPO3 CMS"
+	],
+	"require": {
+		"typo3/cms-core": ">=6.2.0,<7.6.99",
+		"php": ">=5.5.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"Gebruederheitz\\GhFeeds\\": "Classes/"
+		}
+	},
+	"replace": {
+		"gh_onetimesession": "self.version",
+		"typo3-ter/gh_onetimesession": "self.version"
+	}
+}
